@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Homepage</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/css/main.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="nav-bar">
+        <ul id="menu">
+            <li class="menuItem">Gabble</li>
+            <li class="menuItem"><a href="/posts">Create a new post</a></li>
+            <li class="menuItem">Logged in as {{user.username}}</li>
+            <li class="menuItem"><a href="/logout">Log out</a></li>
+        </ul>
+    </nav>
+    <div id="wrapper-homepage">
+        <h1>Messages</h1>
+        {{#messages}}
+        <div class="message">
+            <p>
+                <form action="/like/{{id}}" method="post">
+                    <div class="line-1">
+                        <span><strong>{{user.username}}</strong>: </span>
+                        <span class="middle">{{message}}</span>
+                        <input type="submit" class="btn-like" value="Like">
+                    </div>
+                </form>
+                {{createdAt}}
+                <br> {{#likes.length}}
+                <a href="/likes/{{id}}">{{likes.length}} likes</a> {{/likes.length}} {{^likes.length}} No likes yet. {{/likes.length}}
+                <br>
+            </p>
+        </div>
+        <br> {{/messages}}
+    </div>
+</body>
+
+</html>

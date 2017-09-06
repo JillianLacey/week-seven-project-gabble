@@ -5,7 +5,7 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    UserId: {
+    userId: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
@@ -19,7 +19,7 @@ module.exports = function (sequelize, DataTypes) {
   //this is where we do the joins. We deleted the class Methods.
   post.associate = function (models) {
     post.belongsTo(models.user, { as: "user", foreignKey: "userId" })
-    post.hasMany(models.like, { as: "like", foreignKey: "postId" })
+    post.hasMany(models.like, { as: "likes", foreignKey: "postId" })
   };
   return post;
 };

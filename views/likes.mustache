@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Likes</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav>
+        <ul id="menu">
+            <li class="menuItem"><a href="/">Gabble</a></li>
+            <li class="menuItem"><a href="/posts">Create a new post</a></li>
+            <li class="menuItem">Logged in as {{user.username}}</li>
+            <li class="menuItem"><a href="/logout">Log out</a></li>
+        </ul>
+    </nav>
+    <div id="wrapper-likes">
+        {{#posts}}
+        <div class="message">
+            <p>
+                <strong>{{user.username}}</strong>: {{message}}
+                <br><br> {{createdAt}}
+                <br>
+                <h1>Liked by</h1>
+                {{#likes}} {{user.username}}
+                <br> {{/likes}}
+            </p>
+        </div>
+        {{/posts}}
+    </div>
+</body>
+
+</html>
