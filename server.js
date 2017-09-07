@@ -12,7 +12,7 @@ const logoutRouter = require('./routes/logoutRoutes');
 const signupRouter = require('./routes/signupRoutes');
 const likesRouter = require('./routes/likesRoutes');
 const postsRouter = require('./routes/postsRoutes');
-// const mygabsRouter = require('./routes/mygabsRoutes');
+const mypostsRouter = require('./routes/mypostsRoutes');
 const app = express();
 
 // RENDER ENGINE
@@ -36,6 +36,7 @@ app.use('/logout', logoutRouter);
 app.use('/signup', signupRouter);
 app.use('/likes', likesRouter);
 app.use('/posts', postsRouter);
+app.use('/myposts', mypostsRouter);
 
 // LISTENER
 app.listen(port, function () {

@@ -13,6 +13,7 @@
         <ul id="menu">
             <li class="menuItem">Gabble</li>
             <li class="menuItem"><a href="/posts">Create a new post</a></li>
+            <li class="menuItem"><a href="/myposts">View my posts</a></li>
             <li class="menuItem">Logged in as {{user.username}}</li>
             <li class="menuItem"><a href="/logout">Log out</a></li>
         </ul>
@@ -26,7 +27,7 @@
                     <div class="line-1">
                         <span><strong>{{user.username}}</strong>: </span>
                         <span class="middle">{{message}}</span>
-                        <input type="submit" class="btn-like" value="Like">
+                        <input type="submit" value="Like">
                     </div>
                 </form>
                 {{createdAt}}

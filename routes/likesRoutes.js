@@ -2,8 +2,9 @@ const express = require('express');
 const likesRouter = express.Router();
 const models = require("../models");
 
-likesRouter.get("/:id", function (req, res) {
-    models.message
+likesRouter.post("/:id", function (req, res) {
+    // SELECT 
+    models.post
         .findOne({
             where: { id: req.params.id },
             include: [
@@ -22,7 +23,7 @@ likesRouter.get("/:id", function (req, res) {
             ]
         })
         .then(function (foundLikes) {
-            console.log(foundLikes);
+            // console.log(foundLikes);
             res.render("likes", {
                 messages: foundLikes,
                 user: req.session.user
