@@ -29,7 +29,6 @@ app.use(expressValidator());
 app.use(session(sessionConfig));
 
 // ROUTES
-app.use('/', indexRouter);
 app.use('/home', indexRouter);
 app.use('/login', loginRouter);
 app.use('/logout', logoutRouter);
@@ -37,6 +36,7 @@ app.use('/signup', signupRouter);
 app.use('/likes', likesRouter);
 app.use('/posts', postsRouter);
 app.use('/myposts', mypostsRouter);
+app.use('/', indexRouter);
 
 // LISTENER
 app.listen(port, function () {

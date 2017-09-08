@@ -34,19 +34,6 @@ indexRouter.get("/", shared.checkAuth, function (req, res) {
         });
 });
 
-indexRouter.post("/like/:id", function (req, res) {
-    var newLike = models.like.build({
-        messageId: req.params.id,
-        userId: req.session.user.userId
-    })
-    newLike
-        .save()
-        .then(function (savedLike) {
-            res.redirect("/");
-        })
-        .catch(function (err) {
-            res.status(500).send(err);
-        });
-});
+
 
 module.exports = indexRouter;
