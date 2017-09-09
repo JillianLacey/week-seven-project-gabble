@@ -5,30 +5,33 @@
     <title>Login</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link href="main.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 </head>
 
 <body>
-    <nav>
-        <ul id="menu">
-            <li class="menuItem">Gabble</li>
-            <li class="menuItem">Posts</li>
-            <li class="menuItem">Log in</li>
-            <li class="menuItem">My posts</li>
-            <li class="menuItem"><a href="/signup">Sign up</a></li>
-        </ul>
-    </nav>
-    <div id="wrapper-login">
-        <h1>Login</h1>
-        <form action="/login" method="post">
-            <label for="username">Username</label><br>
-            <input type="text" name="username" value="" autofocus><br>
-            <label for="password">Password</label><br>
-            <input type="password" name="password"><br>
-            <input type="submit" name="login" value="Log in">
-        </form>
+  
+    <div>
+        <div class ="form">
+            <h1>Welcome to Gabble!</h1>
+            <form action="/login" method="post">
+                <label for="username"></label><br>
+                <input type="text" name="username" value="" placeholder="username" autocomplete=off autofocus><br>
+                <label for="password"></label><br>
+                <input type="password" name="password"  placeholder="password" autocomplete=off><br>
+
+                <button type="submit" value="Log in">Log In</button>
+            </form>
+            <br>
+        <a href="/signup">Don't have an account? Sign up</a>
+        </div>
     </div>
 </body>
 
 </html>
+
+
+
+
+   

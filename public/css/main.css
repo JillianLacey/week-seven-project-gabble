@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    /* background: lightgray; */
+    background-image: linear-gradient(rgba(45, 9, 9, 0.74), rgba(193, 178, 178, 0.27), transparent), url(../img/adam-przewoski-193.jpg);
+    height: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    /* z-index: 1; */
+}
+
+.wrapper {}
+
+h1 {
+    /* font-family: 'Acme', sans-serif; */
+    font-family: 'Lobster', cursive;
+    color: rgb(243, 236, 228);
+    letter-spacing: .1rem;
+    margin-bottom: 10px;
+}
+
+
+/* h3 {
+    font-family: 'Acme', sans-serif;
+    color: rgb(231, 244, 245);
+    letter-spacing: .1rem;
+} */
+
+.form {
+    position: relative;
+    /* z-index: 1; */
+    background: rgba(160, 49, 49, 0.92);
+    width: 25%;
+    margin: 260px 40px 0 0;
+    padding: 30px 50px;
+    text-align: center;
+    box-shadow: 0 0 0 10px 0 rgba(0, 0, 0, 0.1), 0 3px 3px 0 rgba(0, 0, 0, 0.1);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 7px;
+}
+
+input {
+    background: rgba(249, 249, 249, 0.57);
+    outline: none;
+    border: none;
+    line-height: 1.9;
+    width: 55%;
+    border-radius: 3px;
+    text-align: center;
+    font-size: .9rem;
+}
+
+.form button {
+    text-transform: uppercase;
+    outline: 0;
+    background: #1aadc5;
+    width: 30%;
+    border: 0;
+    padding: 6px;
+    color: #FFFFFF;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+    margin: 20px 55px 0;
+    /* font-family: 'Acme', sans-serif; */
+    border-radius: 3px;
+    letter-spacing: .07rem;
+}
+
+.form button:hover {
+    background: #2985CF;
+}
+
+input::placeholder {
+    color: black;
+    letter-spacing: .1rem;
+}
+
+.form a {
+    text-decoration: none;
+    color: white;
+}
+
+.form a:hover {
+    color: #15D0EC;
+}

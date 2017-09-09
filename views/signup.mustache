@@ -5,39 +5,32 @@
     <title>Homepage</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link href="/css/main.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link rel="stylesheet" href="/css/main.css">
 </head>
 
 <body>
-    <nav>
-        <ul id="menu">
-            <li class="menuItem">Gabble</li>
-            <li class="menuItem">Create a new post</li>
-            <li class="menuItem"><a href="login">Log in</a></li>
-            <li class="menuItem">Sign up</li>
-        </ul>
-    </nav>
-    <div id="wrapper-signup">
-        <h1>Sign up</h1>
-        <form action="/signup" method="post">
-            <label for="firstname">First Name</label><br>
-            <input type="text" name="firstname" value="{{data.firstname}}" required autofocus><br>
-            <label for="lastname">Last Name</label><br>
-            <input type="text" name="lastname" value="{{data.lastname}}" required><br>
-            <label for="email">Email</label><br>
-            <input type="text" name="email" value="{{data.email}}" required><br>
-            <label for="username">Username</label><br>
-            <input type="text" name="username" value="{{data.username}}" required><br>
-            <label for="password">Password</label><br>
-            <input type="password" name="password" value="{{data.password}}" required><br>
-            <input type="submit" name="signup" value="Sign up">
-        </form>
+
+    <div>
+    <div class ="form">
+        <h1>Gabble Sign Up</h1>
+        <form action="/signup" method="post"><br>
+            <input type="text" name="firstname" value="{{data.firstname}}" placeholder="First Name" required autocomplete=off autofocus><br><br>
+            <input type="text" name="lastname" value="{{data.lastname}}" placeholder="Last Name" autocomplete=off required><br><br>
+            <input type="text" name="email" value="{{data.email}}" placeholder="Email" autocomplete=off required><br><br>
+            <input type="text" name="username" value="{{data.username}}" placeholder="Username" autocomplete=off required><br><br>
+            <input type="password" name="password" value="{{data.password}}" placeholder="Password" autocomplete=off required><br>
+            <button type="submit" name="signup" value="Sign up">Submit</button>
+        </form> <br>
+        <a href="/login">Already have an account? Log in</a>
+        
         {{#errors}}
         <div class="error">
             {{msg}} <br>
         </div>
         {{/errors}}
+        </div>
     </div>
 </body>
 
