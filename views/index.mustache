@@ -2,41 +2,51 @@
 <html lang="en">
 
 <head>
-    <title>Homepage</title>
+    <title>Gabble</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,800" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
     <nav class="nav-bar">
-        <ul id="menu">
-            <li class="menuItem">Gabble</li>
-            <li class="menuItem"><a href="/posts">Create a new post</a></li>
-            <li class="menuItem"><a href="/myposts">View my posts</a></li>
-            <li class="menuItem">Logged in as {{user.username}}</li>
-            <li class="menuItem"><a href="/logout">Log out</a></li>
-        </ul>
+            <div class="nav-div">
+                <p class="menuItem"><a href="/posts">Create a New Post</a></p>
+                <p class="menuItem"><a href="/myposts">View My Posts</a></p>
+            </div>
+            <div class="nav-div">
+            <h1 class="page-header">Gabble</h1>
+            </div>
+            <div class="nav-div">
+            <p class="menuItem">Logged in as {{user.username}}</p>
+            <p class="menuItem"><a href="/logout">Log Out</a></p>
+            </div>
+   
     </nav>
-    <div id="wrapper-homepage">
-        <h1>Messages</h1>
+    <div class="wrapper">
+    <div class="post-ctr">
         {{#messages}}
         <div class="message">
-            <p>
+            
                 <form action="/likes/{{id}}" method="post">
-                    <div class="line-1">
-                        <span><strong>{{user.username}}</strong>: </span>
+                    <div class="main-content">
+                        <span class="username">{{user.username}}: </span>
                         <span class="middle">{{message}}</span>
-                        <input type="submit" value="Like">
                     </div>
+                    <div>
+                        <button class="like-btn" type="submit" value="Like"><i class="fa fa-thumbs-up" aria-hidden="true"></i></button>
+              {{#likes.length}}
+                <a class ="total-likes" href="/likes/{{id}}">{{likes.length}} likes</a> {{/likes.length}} {{^likes.length}} No likes yet. {{/likes.length}}
+                </div>
                 </form>
-                {{createdAt}}
-                <br> {{#likes.length}}
-                <a href="/likes/{{id}}">{{likes.length}} likes</a> {{/likes.length}} {{^likes.length}} No likes yet. {{/likes.length}}
-                <br>
-            </p>
+               <span class="created-at"> {{createdAt}}</span>
+            
         </div>
-        <br> {{/messages}}
+         {{/messages}}
+        </div>
     </div>
 </body>
 

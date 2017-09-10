@@ -1,40 +1,25 @@
 * {
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    /* font-family: Arial, Helvetica, sans-serif; */
+    font-family: 'Open Sans', sans-serif;
 }
 
 body {
-    /* background: lightgray; */
     background-image: linear-gradient(rgba(45, 9, 9, 0.74), rgba(193, 178, 178, 0.27), transparent), url(../img/adam-przewoski-193.jpg);
+    background-attachment: fixed;
     height: 50%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    /* z-index: 1; */
-}
-
-.wrapper {}
-
-h1 {
-    /* font-family: 'Acme', sans-serif; */
-    font-family: 'Lobster', cursive;
-    color: rgb(243, 236, 228);
-    letter-spacing: .1rem;
-    margin-bottom: 10px;
 }
 
 
-/* h3 {
-    font-family: 'Acme', sans-serif;
-    color: rgb(231, 244, 245);
-    letter-spacing: .1rem;
-} */
+/*\\\\\ Log in and Signup Page Styles Begin Here \\\\\*/
 
 .form {
     position: relative;
-    /* z-index: 1; */
-    background: rgba(160, 49, 49, 0.92);
+    background: rgba(105, 62, 96, 0.92);
     width: 25%;
     margin: 260px 40px 0 0;
     padding: 30px 50px;
@@ -70,18 +55,17 @@ input {
     transition: all 0.3 ease;
     cursor: pointer;
     margin: 20px 55px 0;
-    /* font-family: 'Acme', sans-serif; */
     border-radius: 3px;
-    letter-spacing: .07rem;
+    /* letter-spacing: .07rem; */
 }
 
 .form button:hover {
-    background: #2985CF;
+    background: #1692A5;
 }
 
 input::placeholder {
     color: black;
-    letter-spacing: .1rem;
+    /* letter-spacing: .1rem; */
 }
 
 .form a {
@@ -91,4 +75,108 @@ input::placeholder {
 
 .form a:hover {
     color: #15D0EC;
+}
+
+
+/*\\\\\ Log In and Signup Page Styles End Here \\\\\*/
+
+.wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.post-ctr {
+    width: 43%;
+    padding: 70px 0 40px 0;
+    box-shadow: 0 0 0 10px 0 rgba(0, 0, 0, 0.4), 0 3px 3px 0 rgba(0, 0, 0, 0.4);
+}
+
+.nav-bar {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    text-align: center;
+    margin: 0 10p;
+    background: rgba(105, 62, 96, 0.92);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2), 0 3px 3px 0 rgba(0, 0, 0, 0.24);
+    position: fixed;
+}
+
+.nav-div {
+    display: flex;
+    line-height: 1rem;
+    margin: 0 20px;
+}
+
+.menuItem {
+    color: white;
+    padding: 0 5px;
+}
+
+.nav-div a {
+    text-decoration: none;
+    color: white;
+    margin: 0 10px;
+}
+
+.nav-div a:hover {
+    color: #15D0EC;
+}
+
+h1 {
+    font-family: 'Lobster', cursive;
+    color: rgb(243, 236, 228);
+    letter-spacing: .1rem;
+    margin-bottom: 10px;
+}
+
+.message {
+    background: rgba(212, 207, 210, 0.96);
+    padding: 16px 36px;
+    margin-bottom: 12px;
+    border-radius: 6px;
+    color: #2d2323;
+}
+
+.like-btn {
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    color: #23909a;
+    cursor: pointer;
+}
+
+.like-btn:hover {
+    color: #FFFFFF;
+}
+
+.total-likes {
+    text-decoration: none;
+    color: #23909a;
+    font-weight: 400;
+}
+
+.total-likes:hover {
+    color: #FFFFFF;
+}
+
+.created-at {
+    font-size: .7rem;
+}
+
+.main-content {
+    line-height: 1.6rem;
+}
+
+.username {
+    font-weight: 800;
+    color: #23909a;
+}
+
+.page-header {
+    padding-right: 62px;
 }

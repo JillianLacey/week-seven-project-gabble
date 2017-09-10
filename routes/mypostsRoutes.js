@@ -24,7 +24,7 @@ mypostsRouter.get("/", shared.checkAuth, function (req, res) {
             ]
         })
         .then(function (foundMessages) {
-            console.log(foundMessages);
+            // console.log(foundMessages);
             res.render("myposts", {
                 posts: foundMessages,
                 user: req.session.user

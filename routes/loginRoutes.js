@@ -44,7 +44,7 @@ loginRouter.post("/", function (req, res) {
             }
         }).then(function (user) {
             if (user) {
-                console.log('user: ', user);
+                // console.log('user: ', user);
                 req.session.user = {
                     username: user.username,
                     firstname: user.firstname,
@@ -52,7 +52,7 @@ loginRouter.post("/", function (req, res) {
                 }
                 res.redirect("/");
             } else {
-                console.log("USER NOT FOUND");
+                // console.log("USER NOT FOUND");
                 return res.redirect("/login");
             }
         });
