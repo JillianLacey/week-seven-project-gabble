@@ -195,12 +195,13 @@ h1 {
 .new-post {
     align-content: center;
     transform: translate(-146%, -60%);
+    margin-top: 300px;
 }
 
 .new-post-text {
     background: rgba(249, 249, 249, 0.57);
     height: 7em;
-    width: 21em;
+    width: 95%;
     resize: none;
     outline: none;
     font-size: 1rem;
