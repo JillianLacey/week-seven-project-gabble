@@ -2,42 +2,53 @@
 <html lang="en">
 
 <head>
-    <title>My Gabs</title>
+    <title>My Posts</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="stylesheet" href="/css/main.css">
+    <link href="/css/main.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,800" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
     <nav class="nav-bar">
-        <ul id="menu">
-            <li class="menuItem"><a href="/">Gabble</a></li>
-            <li class="menuItem">My Posts</li>
-            <li class="menuItem"><a href="/posts">Create a new post</a></li>
-            <li class="menuItem">Logged in as {{user.username}}</li>
-            <li class="menuItem"><a href="/logout">Log out</a></li>
-        </ul>
+        <div class="nav-div">
+            <p class="menuItem"><a href="/posts">Create a New Post</a></p>
+            <p class="menuItem"><a href="/myposts">View My Posts</a></p>
+        </div>
+        <div class="nav-div">
+            <a class="page-header" href="/">Gabble</a>
+        </div>
+        <div class="nav-div">
+            <p class="menuItem">Logged in as <span class="logged-in">{{user.username}}</span></p>
+            <p class="menuItem"><a href="/logout">Log Out</a></p>
+        </div>
+
     </nav>
-    <div id="wrapper-homepage">
+    <div class="wrapper">
+    
+        <div class="post-ctr">
         <h1>My Posts</h1>
-        {{#posts}}
-        <div class="message">
-            <p>
+            {{#posts}}
+            <div class="message">
                 <form action="/myposts/{{id}}" method="post">
-                    <div class="line-1">
-                        <span><strong>{{user.username}}</strong>: </span>
+                    <div class="main-content">
+                        <span class="username">{{user.username}}: </span>
                         <span class="middle">{{message}}</span>
-                        <input type="submit" class="btn-like" value="Delete">
+                    </div>
+                    <div>
+                        {{#likes.length}}
+                        <a class="total-likes" href="/likes/{{id}}">{{likes.length}} likes</a> {{/likes.length}} {{^likes.length}}
+                        No likes yet. {{/likes.length}}
+                        <button type="submit" class="like-btn del-btn" value="Delete"><i class="fa fa-trash-o" aria-hidden="true"></i>&nbsp; Delete Post</button>
                     </div>
                 </form>
-                {{createdAt}}
-                <br> {{#likes.length}}
-                <a href="/likes/{{id}}">{{likes.length}} likes</a> {{/likes.length}} {{^likes.length}} No likes yet. {{/likes.length}}
-                <br>
-            </p>
+                <span class="created-at">{{createdAt}}</span>
+
+            </div>
+            {{/posts}}
         </div>
-        <br> {{/posts}}
     </div>
 </body>
 

@@ -5,34 +5,47 @@
     <title>Likes</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link href="/css/main.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,800" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
-    <nav>
-        <ul id="menu">
-            <li class="menuItem"><a href="/">Gabble</a></li>
-            <li class="menuItem"><a href="/posts">Create a new post</a></li>
-            <li class="menuItem"><a href="/myposts">View my posts</a></li>
-            <li class="menuItem">Logged in as {{user.username}}</li>
-            <li class="menuItem"><a href="/logout">Log out</a></li>
-        </ul>
-    </nav>
-    <div id="wrapper-likes">
-        {{#posts}}
-        <div class="message">
-            <p>
-                <strong>{{user.username}}</strong>: {{message}}
-                <br><br> {{createdAt}}
-                <br>
-                <h1>Liked by</h1>
-                {{#likes}} {{user.username}}
-                <br> {{/likes}}
-            </p>
+    <nav class="nav-bar">
+        <div class="nav-div">
+            <p class="menuItem"><a href="/posts">Create a New Post</a></p>
+            <p class="menuItem"><a href="/myposts">View My Posts</a></p>
         </div>
-        {{/posts}}
+        <div class="nav-div">
+            <a class="page-header" href="/">Gabble</a>
+        </div>
+        <div class="nav-div">
+            <p class="menuItem">Logged in as {{user.username}}</p>
+            <p class="menuItem"><a href="/logout">Log Out</a></p>
+        </div>
+    </nav>
+
+    <div class="wrapper">
+        <div class="post-ctr">
+            {{#posts}}
+            <div class="message">
+
+                <span class="username">{{user.username}}:</span>
+                <span class="middle">{{message}}</span><br>
+                <span class="created-at">{{createdAt}}</span><br>
+
+                <span class="liked-by">Liked by:</span><br>
+                <span>{{#likes}} {{user.username}}
+                {{/likes}}</span>
+
+            </div>
+            {{/posts}}
+        </div>
     </div>
+
+
+
 </body>
 
 </html>

@@ -2,30 +2,39 @@
 <html lang="en">
 
 <head>
-    <title>Create a New Gab</title>
+    <title>Create a New Post</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="stylesheet" href="/css/main.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/css/main.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,800" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <body>
-    <nav>
-        <ul id="menu">
-            <li class="menuItem"><a href="/">Gabble</a></li>
-            <li class="menuItem">Create a new post</li>
-            <li class="menuItem"><a href="/myposts">View my posts</a></li>
-            <li class="menuItem">Logged in as {{user.username}}</li>
-            <li class="menuItem"><a href="logout">Log out</a></li>
-        </ul>
+  <nav class="nav-bar">
+            <div class="nav-div">
+                <p class="menuItem"><a href="/posts">Create a New Post</a></p>
+                <p class="menuItem"><a href="/myposts">View My Posts</a></p>
+            </div>
+            <div class="nav-div">
+            <a class="page-header" href="/">Gabble</a>
+            </div>
+            <div class="nav-div">
+            <p class="menuItem">Logged in as <span class="logged-in">{{user.username}}</span></p>
+            <p class="menuItem"><a href="/logout">Log Out</a></p>
+        </div>
+   
     </nav>
-    <div id="wrapper-create">
-        <h1>Create a New Gab</h1>
+    <div class="wrapper">
+        <div class="new-post form">
+        <h1>Create a New Post</h1>
         <br>
         <form action="/posts" method="post">
-            <textarea name="newmessage" id="newmessage" maxlength="140" cols="50" rows="3"></textarea>
+            <textarea class="new-post-text" name="newmessage"  maxlength="140"></textarea>
             <br>
-            <input type="submit" name="savemessage" value="Save Message">
+            <button type="submit" name="savemessage" value="Save Message">Save</button>
         </form>
+        </div>
     </div>
 </body>
 

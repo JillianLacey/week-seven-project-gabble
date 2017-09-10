@@ -13,39 +13,38 @@
 
 <body>
     <nav class="nav-bar">
-            <div class="nav-div">
-                <p class="menuItem"><a href="/posts">Create a New Post</a></p>
-                <p class="menuItem"><a href="/myposts">View My Posts</a></p>
-            </div>
-            <div class="nav-div">
-            <h1 class="page-header">Gabble</h1>
-            </div>
-            <div class="nav-div">
-            <p class="menuItem">Logged in as {{user.username}}</p>
+        <div class="nav-div">
+            <p class="menuItem"><a href="/posts">Create a New Post</a></p>
+            <p class="menuItem"><a href="/myposts">View My Posts</a></p>
+        </div>
+        <div class="nav-div">
+            <a class="page-header" href="/">Gabble</a>
+        </div>
+        <div class="nav-div">
+            <p class="menuItem">Logged in as <span class="logged-in">{{user.username}}</span></p>
             <p class="menuItem"><a href="/logout">Log Out</a></p>
-            </div>
-   
+        </div>
     </nav>
+
     <div class="wrapper">
-    <div class="post-ctr">
-        {{#messages}}
-        <div class="message">
-            
+        <div class="post-ctr">
+            {{#messages}}
+            <div class="message">
                 <form action="/likes/{{id}}" method="post">
                     <div class="main-content">
                         <span class="username">{{user.username}}: </span>
                         <span class="middle">{{message}}</span>
                     </div>
                     <div>
-                        <button class="like-btn" type="submit" value="Like"><i class="fa fa-thumbs-up" aria-hidden="true"></i></button>
-              {{#likes.length}}
-                <a class ="total-likes" href="/likes/{{id}}">{{likes.length}} likes</a> {{/likes.length}} {{^likes.length}} No likes yet. {{/likes.length}}
-                </div>
+                        <button class="like-btn" type="submit" value="Like"><i class="fa fa-thumbs-up" aria-hidden="true"></i></button>                        {{#likes.length}}
+                        <a class="total-likes" href="/likes/{{id}}">{{likes.length}} likes</a> {{/likes.length}} {{^likes.length}}
+                        No likes yet. {{/likes.length}}
+                    </div>
                 </form>
-               <span class="created-at"> {{createdAt}}</span>
-            
-        </div>
-         {{/messages}}
+                <span class="created-at"> {{createdAt}}</span>
+
+            </div>
+            {{/messages}}
         </div>
     </div>
 </body>

@@ -1,6 +1,5 @@
 * {
     margin: 0;
-    /* font-family: Arial, Helvetica, sans-serif; */
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -56,7 +55,6 @@ input {
     cursor: pointer;
     margin: 20px 55px 0;
     border-radius: 3px;
-    /* letter-spacing: .07rem; */
 }
 
 .form button:hover {
@@ -65,7 +63,6 @@ input {
 
 input::placeholder {
     color: black;
-    /* letter-spacing: .1rem; */
 }
 
 .form a {
@@ -113,13 +110,13 @@ input::placeholder {
 }
 
 .menuItem {
-    color: white;
+    color: rgb(243, 236, 228);
     padding: 0 5px;
 }
 
 .nav-div a {
     text-decoration: none;
-    color: white;
+    color: rgb(243, 236, 228);
     margin: 0 10px;
 }
 
@@ -154,6 +151,10 @@ h1 {
     color: #FFFFFF;
 }
 
+.del-btn {
+    font-size: .9rem;
+}
+
 .total-likes {
     text-decoration: none;
     color: #23909a;
@@ -161,7 +162,7 @@ h1 {
 }
 
 .total-likes:hover {
-    color: #FFFFFF;
+    color: rgb(243, 236, 228);
 }
 
 .created-at {
@@ -178,5 +179,35 @@ h1 {
 }
 
 .page-header {
+    font-family: 'Lobster', cursive;
+    color: rgb(243, 236, 228);
+    letter-spacing: .1rem;
+    margin-bottom: 10px;
     padding-right: 62px;
+    font-size: 1.5rem;
+}
+
+.liked-by {
+    font-weight: 800;
+    color: #23909a;
+}
+
+.new-post {
+    align-content: center;
+    transform: translate(-146%, -60%);
+}
+
+.new-post-text {
+    background: rgba(249, 249, 249, 0.57);
+    height: 7em;
+    width: 21em;
+    resize: none;
+    outline: none;
+    font-size: 1rem;
+    padding: 11px;
+}
+
+.logged-in {
+    color: #1CB0C4;
+    font-weight: 800;
 }
